@@ -5,7 +5,9 @@ app.controller('planetController', ['$scope', '$http','$filter', function ($scop
     $scope.reverseSort = false;
     $scope.recordPerPage = 10;
     $scope.numberOfItemsPerPage = [10, 20, 30, 50, 100];
-    $http.get("http://jsonplaceholder.typicode.com/posts").then(function (response) {
+    $http.get("http://jsonplaceholder.typicode.com/postsfdfdf").then(function mySuccess(response) {
         $scope.names = response.data;
+    }, function myError(response){
+        $scope.errorMessage = "Error while fetching data from server.Please check the link properly...";
     });
 }]);
